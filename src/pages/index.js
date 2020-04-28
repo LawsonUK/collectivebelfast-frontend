@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => (
     <SEO title="Home" />
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-    <h2>Article</h2>
+    <h2>Latest Articles</h2>
     <ul>
       {data.allStrapiArticle.nodes.map(article => (
         <li key={article.id}>
