@@ -36,11 +36,10 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        google: {
-          families: ["Inter"],
-        },
+        fonts: [`Inter\:400,700,900`],
+        display: "swap",
       },
     },
     `gatsby-plugin-sass`,

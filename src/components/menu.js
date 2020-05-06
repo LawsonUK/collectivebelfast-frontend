@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import "./menu.scss"
 
 const Menu = () => {
   return (

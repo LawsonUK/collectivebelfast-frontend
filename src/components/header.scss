@@ -1,0 +1,20 @@
+header {
+  margin: 0 auto;
+  max-width: 1310px;
+  padding: 1.45rem 1.0875rem;
+
+  h1 {
+    display: inline-flex;
+    margin: 0;
+    border-bottom: 4px solid #2ab38c;
+
+    a {
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 28px;
+      line-height: 34px;
+      color: #000000;
+    }
+  }
+}
