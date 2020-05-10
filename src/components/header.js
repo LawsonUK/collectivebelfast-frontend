@@ -12,6 +12,10 @@ const Header = ({ siteTitle }) => (
     </h1>
 
     <Menu />
+
+    <div>
+      Sunday 11:00am <span className="dot"></span> Dot
+    </div>
   </header>
 )
 

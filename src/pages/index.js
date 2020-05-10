@@ -4,23 +4,27 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Banner from "../components/banner"
+import Card from "../components/card"
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <h2>Latest Articles</h2>
-    <ul>
-      {data.allStrapiArticle.nodes.map(article => (
-        <li key={article.id}>
-          <h2>
-            <Link to={`/${article.id}`}>{article.title}</Link>
-          </h2>
-          <p>{article.content}</p>
-        </li>
-      ))}
-    </ul>
+    <Banner
+      url={data.allStrapiHomepage.nodes[0].BannerImage.publicURL}
+      text={data.allStrapiHomepage.nodes[0].BannerText}
+    />
+    <div className="row">
+      <h2>Latest Articles</h2>
+      <ul>
+        {data.allStrapiArticle.nodes.map(article => (
+          <li key={article.id}>
+            <Card />
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div className="row dark"></div>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
@@ -32,10 +36,19 @@ export const query = graphql`
   {
     allStrapiArticle {
       nodes {
-        id
-        slug
-        title
         content
+        title
+        slug
+        published_on
+        id
+      }
+    }
+    allStrapiHomepage {
+      nodes {
+        BannerImage {
+          publicURL
+        }
+        BannerText
       }
     }
   }

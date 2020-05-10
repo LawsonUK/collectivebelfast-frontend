@@ -33,6 +33,7 @@ module.exports = {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000, // Default to 100
         contentTypes: [`article`],
+        singleTypes: [`homepage`],
       },
     },
     {

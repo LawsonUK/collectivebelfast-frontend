@@ -1,0 +1,21 @@
+.banner {
+  height: 626px;
+  background-position: center;
+  background-size: cover;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 36px;
+  position: relative;
+  border-radius: 10px;
+
+  span {
+    position: absolute;
+    right: 200px;
+    top: 145px;
+    width: 536px;
+    color: white;
+  }
+  a {
+    color: #2cf9bf;
+  }
+}

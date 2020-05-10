@@ -9,6 +9,11 @@ nav {
 
     li {
       margin-right: 50px;
+      margin-bottom: 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
 
       &:last-child {
         margin-right: 0px;

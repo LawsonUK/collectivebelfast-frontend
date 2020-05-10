@@ -8,19 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-section,
-summary {
-  display: block;
-}
+
 audio,
 canvas,
 progress,
@@ -58,10 +46,6 @@ strong {
 }
 dfn {
   font-style: italic;
-}
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
 }
 mark {
   background-color: #ff0;
@@ -608,5 +592,22 @@ pre tt:after {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+
+.row {
+  padding: 54px 0 99px 0px;
+  h2 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 140%;
+    color: #2ab38c;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    li {
+      display: inline-flex;
+    }
   }
 }

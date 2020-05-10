@@ -1,7 +1,10 @@
 header {
   margin: 0 auto;
   max-width: 1310px;
-  padding: 1.45rem 1.0875rem;
+  padding: 1.45rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   h1 {
     display: inline-flex;
@@ -15,6 +18,21 @@ header {
       font-size: 28px;
       line-height: 34px;
       color: #000000;
+    }
+  }
+
+  div {
+    display: inline-flex;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 27px;
+
+    span.dot {
+      background-color: #2ab38c;
+      width: 18px;
+      height: 18px;
+      border-radius: 100%;
+      margin: 3px 7px 7px 7px;
     }
   }
 }
