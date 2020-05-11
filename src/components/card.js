@@ -1,19 +1,18 @@
 import React from "react"
+import moment from "moment"
 
 import "./card.scss"
 
-const Card = () => {
+const Card = ({ article }) => {
   return (
     <div className="card">
-      <h3>Don’t Face Unbelief Alone</h3>
-      <span>Mar 7, 2020</span>
-      <p>
-        Unbelief can become a vicious cycle, leaving us isolated and
-        increasingly vulnerable to more and more deception.
-      </p>
+      <div className="card-bg"></div>
+      <h3>{article.title}</h3>
+      <span>{moment(article.published_on).format("Do MMM Y")}</span>
+      <p>{article.excerpt}</p>
       <div className="teacher">
-        <img src="" alt="teacher" />
-        <span>Mark Murphy</span>
+        <img src={article.user.avatar.publicURL} alt="teacher" />
+        <span>{article.user.username}</span>
       </div>
     </div>
   )

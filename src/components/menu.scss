@@ -1,6 +1,5 @@
 nav {
   display: inline-flex;
-  margin-left: 82px;
 
   ul {
     list-style: none;
@@ -9,11 +8,6 @@ nav {
 
     li {
       margin-right: 50px;
-      margin-bottom: 0;
-
-      &:hover {
-        text-decoration: underline;
-      }
 
       &:last-child {
         margin-right: 0px;
@@ -26,6 +20,16 @@ nav {
         font-size: 16px;
         line-height: 19px;
         color: #2ab38c;
+        padding-bottom: 5px;
+
+        &:hover {
+          border-bottom: 3px solid black;
+        }
+
+        &.active {
+          border-bottom: 3px solid black;
+          padding-bottom: 5px;
+        }
       }
     }
   }

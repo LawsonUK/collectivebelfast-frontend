@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => (
       <ul>
         {data.allStrapiArticle.nodes.map(article => (
           <li key={article.id}>
-            <Card />
+            <Card article={article} />
           </li>
         ))}
       </ul>
@@ -41,6 +41,13 @@ export const query = graphql`
         slug
         published_on
         id
+        excerpt
+        user {
+          username
+          avatar {
+            publicURL
+          }
+        }
       }
     }
     allStrapiHomepage {

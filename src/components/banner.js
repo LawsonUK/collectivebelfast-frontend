@@ -5,12 +5,13 @@ import "./banner.scss"
 
 const Banner = ({ url, text }) => {
   return (
-    <div
-      className="banner"
-      style={{
-        backgroundImage: `url(${url})`,
-      }}
-    >
+    <div className="banner">
+      <div
+        className="banner-bg"
+        style={{
+          backgroundImage: `url(${url})`,
+        }}
+      ></div>
       {/* <span>{text}</span> */}
       <span>
         <p>
