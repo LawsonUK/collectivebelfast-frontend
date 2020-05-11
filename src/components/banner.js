@@ -1,18 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 
 import "./banner.scss"
 
-const Banner = ({ url, text }) => {
+const Banner = ({ imageData, text }) => {
   return (
     <div className="banner">
-      <div
+      <BackgroundImage
+        Tag="div"
         className="banner-bg"
-        style={{
-          backgroundImage: `url(${url})`,
-        }}
-      ></div>
-      {/* <span>{text}</span> */}
+        fluid={imageData}
+      ></BackgroundImage>
       <span>
         <p>
           Collective is a network of Home Churches in and around Belfast,

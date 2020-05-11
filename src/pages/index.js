@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Card from "../components/card"
@@ -11,7 +10,9 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <Banner
-      url={data.allStrapiHomepage.nodes[0].BannerImage.publicURL}
+      imageData={
+        data.allStrapiHomepage.nodes[0].BannerImage.childImageSharp.fluid
+      }
       text={data.allStrapiHomepage.nodes[0].BannerText}
     />
     <div className="row">
@@ -51,6 +52,11 @@ export const query = graphql`
           }
         }
         featured_image {
+          childImageSharp {
+            fluid(maxWidth: 394, jpegQuality: 80) {
+              ...GatsbyImageSharpFluid
+            }
+          }
           publicURL
         }
       }
@@ -58,6 +64,11 @@ export const query = graphql`
     allStrapiHomepage {
       nodes {
         BannerImage {
+          childImageSharp {
+            fluid(maxWidth: 1310, jpegQuality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
           publicURL
         }
         BannerText

@@ -9,7 +9,7 @@
   background-color: black;
 
   .card-bg {
-    position: absolute;
+    position: absolute !important;
     top: 0;
     bottom: 0;
     right: 0;
@@ -18,15 +18,15 @@
     background-size: cover;
     border-radius: 10px;
     z-index: 0;
-    opacity: 0.5;
+    opacity: 0.5 !important;
   }
 
   .card-content {
     position: relative;
     line-height: 140%;
+    font-weight: bold;
 
     h3 {
-      font-weight: bold;
       font-size: 24px;
       margin-bottom: 5px;
       line-height: 140%;

@@ -1,18 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
 import moment from "moment"
+import BackgroundImage from "gatsby-background-image"
 
 import "./card.scss"
 
 const Card = ({ article }) => {
   return (
     <div className="card">
-      <div
+      <BackgroundImage
+        Tag="div"
         className="card-bg"
-        style={{
-          backgroundImage: `url(${article.featured_image.publicURL})`,
-        }}
-      ></div>
+        fluid={article.featured_image.childImageSharp.fluid}
+      ></BackgroundImage>
       <div className="card-content">
         <h3>{article.title}</h3>
         <span className="date">
