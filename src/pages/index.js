@@ -15,7 +15,9 @@ const IndexPage = ({ data }) => (
       text={data.allStrapiHomepage.nodes[0].BannerText}
     />
     <div className="row">
-      <h2>Latest Articles</h2>
+      <h2>
+        <Link to="/articles">Latest Articles</Link>
+      </h2>
       <ul>
         {data.allStrapiArticle.nodes.map(article => (
           <li key={article.id}>
@@ -25,10 +27,10 @@ const IndexPage = ({ data }) => (
       </ul>
     </div>
     <div className="row dark"></div>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    </div> */}
+    {/* <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 )
 
@@ -47,6 +49,9 @@ export const query = graphql`
           avatar {
             publicURL
           }
+        }
+        featured_image {
+          publicURL
         }
       }
     }

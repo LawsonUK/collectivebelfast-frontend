@@ -1,9 +1,12 @@
 .card {
-  width: 394px;
+  max-width: 394px;
   height: 402px;
   padding: 65px 45px 38px 45px;
   position: relative;
   border-radius: 10px;
+  color: white;
+  z-index: 1;
+  background-color: black;
 
   .card-bg {
     position: absolute;
@@ -11,17 +14,43 @@
     bottom: 0;
     right: 0;
     left: 0;
-    opacity: 0.7;
     background-position: center;
     background-size: cover;
     border-radius: 10px;
+    z-index: 0;
+    opacity: 0.5;
   }
 
-  .teacher {
-    img {
-      border-radius: 100%;
-      width: 42px;
-      height: 42px;
+  .card-content {
+    position: relative;
+    line-height: 140%;
+
+    h3 {
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 5px;
+      line-height: 140%;
+    }
+
+    .date {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 140%;
+      color: #d1d1d1;
+    }
+
+    .teacher {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: absolute;
+
+      img {
+        border-radius: 100%;
+        width: 42px;
+        height: 42px;
+        margin-right: 10px;
+      }
     }
   }
 }

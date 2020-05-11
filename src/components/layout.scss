@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: "Inter";
   -ms-text-size-adjust: 100%;
@@ -12,18 +16,42 @@ body {
 }
 
 .row {
-  padding: 54px 0 99px 0px;
+  padding: 34px 0 99px 0px;
+  border-radius: 10px;
+
   h2 {
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 140%;
-    color: #2ab38c;
+    margin-bottom: 40px;
+    a {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 140%;
+      color: #2ab38c;
+    }
   }
   ul {
     list-style: none;
     margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
     li {
       display: inline-flex;
     }
   }
+
+  a {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 140%;
+    color: #2cf9bf;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.dark {
+  background-color: #2c2c2c;
 }
