@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => (
         </h2>
         <span>{data.allStrapiTeaching.nodes[0].excerpt}</span>
         <div class="teacher"></div>
-        <ul>
+        {/* <ul>
           <li>
             <a href=""></a>
           </li>
@@ -48,7 +48,7 @@ const IndexPage = ({ data }) => (
           <li>
             <a href=""></a>
           </li>
-        </ul>
+        </ul> */}
       </div>
       <div>
         <Link to="/">

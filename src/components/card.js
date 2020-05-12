@@ -15,7 +15,7 @@ const Card = ({ article }) => {
       ></BackgroundImage>
       <div className="card-content">
         <h3>
-          <Link to="/">{article.title}</Link>
+          <Link to={`/articles/${article.slug}`}>{article.title}</Link>
         </h3>
         <span className="date">
           {moment(article.published_on).format("Do MMM Y")}
