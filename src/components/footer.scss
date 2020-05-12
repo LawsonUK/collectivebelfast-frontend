@@ -1,6 +1,53 @@
 footer {
   padding-top: 45px;
   padding-bottom: 60px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 15px;
+      color: #777777;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      margin: 0;
+    }
+
+    svg {
+      color: black;
+    }
+
+    &:first-child {
+      border-bottom: 1px #e5e5e5 solid;
+      padding-bottom: 21px;
+      margin-bottom: 28px;
+    }
+
+    &:nth-child(2) {
+      ul {
+        display: flex;
+        flex-direction: row;
+
+        li {
+          margin: 0 4px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
   h1 {
     display: inline-flex;
     margin: 0;

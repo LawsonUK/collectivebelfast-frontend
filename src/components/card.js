@@ -14,7 +14,9 @@ const Card = ({ article }) => {
         fluid={article.featured_image.childImageSharp.fluid}
       ></BackgroundImage>
       <div className="card-content">
-        <h3>{article.title}</h3>
+        <h3>
+          <Link to="/">{article.title}</Link>
+        </h3>
         <span className="date">
           {moment(article.published_on).format("Do MMM Y")}
         </span>
