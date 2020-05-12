@@ -83,7 +83,7 @@ export const query = graphql`
         featured_image {
           childImageSharp {
             fluid(maxWidth: 394, jpegQuality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -94,7 +94,7 @@ export const query = graphql`
         BannerImage {
           childImageSharp {
             fluid(maxWidth: 1310, jpegQuality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
           publicURL
@@ -114,7 +114,7 @@ export const query = graphql`
         featured_image {
           childImageSharp {
             fluid(maxWidth: 617, jpegQuality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
