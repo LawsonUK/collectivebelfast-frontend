@@ -18,7 +18,6 @@ export const query = graphql`
 `
 
 const Article = ({ data }) => {
-  console.log(data)
   const article = data.strapiArticle
   return (
     <Layout>
