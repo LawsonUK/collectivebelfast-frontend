@@ -16,7 +16,8 @@ const IndexPage = ({ data }) => (
       imageData={
         data.allStrapiHomepage.nodes[0].BannerImage.childImageSharp.fluid
       }
-      text={data.allStrapiHomepage.nodes[0].BannerText}
+      text={text}
+      markdown={false}
     />
     <div className="row">
       <h2>
@@ -34,10 +35,10 @@ const IndexPage = ({ data }) => (
       <div>
         <Link to="/teachings">Teaching</Link>
         <h2>
-          <Link>{data.allStrapiTeaching.nodes[0].title}</Link>
+          <Link to="/teachings">{data.allStrapiTeaching.nodes[0].title}</Link>
         </h2>
         <span>{data.allStrapiTeaching.nodes[0].excerpt}</span>
-        <div class="teacher"></div>
+        <div className="teacher"></div>
         {/* <ul>
           <li>
             <a href=""></a>
@@ -51,7 +52,7 @@ const IndexPage = ({ data }) => (
         </ul> */}
       </div>
       <div>
-        <Link to="/">
+        <Link to="/teachings">
           <Img
             fluid={
               data.allStrapiTeaching.nodes[0].featured_image.childImageSharp
@@ -62,6 +63,23 @@ const IndexPage = ({ data }) => (
       </div>
     </div>
   </Layout>
+)
+
+const text = (
+  <>
+    <p>
+      Collective is a network of Home Churches in and around Belfast, Northern
+      Ireland. We meet in each other's houses every week to study the Bible, to
+      pray, and to build and enjoy the kind of close Christian community
+      described in the New Testament.
+    </p>
+    <p>
+      We all meet together{" "}
+      <Link to="/visit">once every two weeks on Sunday morning</Link> for a
+      Central Bible Teaching (CT),{" "}
+      <Link to="/church">in a building in the Cathedral Quarter</Link>.
+    </p>
+  </>
 )
 
 export const query = graphql`

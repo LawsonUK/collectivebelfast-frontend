@@ -17,7 +17,7 @@
     background-position: center;
     background-size: cover;
     border-radius: 10px;
-    opacity: 0.5 !important;
+    opacity: 0.4 !important;
 
     &::before {
       border-radius: 10px;
@@ -30,6 +30,16 @@
     top: 145px;
     width: 536px;
     color: white;
+
+    ul {
+      list-style: square;
+      li {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 172.3%;
+      }
+    }
   }
   a {
     color: #2cf9bf;

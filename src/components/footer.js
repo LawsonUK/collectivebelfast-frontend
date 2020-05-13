@@ -25,28 +25,28 @@ const Footer = ({ siteTitle }) => {
         </span>
         <ul>
           <li>
-            <a href="/" target="blank">
-              <Icon
-                icon={twitterCircleFilled}
-                style={{ fontSize: "27.259260177612305px" }}
-              />
-            </a>
+            {/* <a href="/" target="blank"> */}
+            <Icon
+              icon={twitterCircleFilled}
+              style={{ fontSize: "27.259260177612305px" }}
+            />
+            {/* </a> */}
           </li>
           <li>
-            <a href="/" target="blank">
-              <Icon
-                icon={facebookIcon}
-                style={{ fontSize: "23.851852416992188px" }}
-              />
-            </a>
+            {/* <a href="/" target="blank"> */}
+            <Icon
+              icon={facebookIcon}
+              style={{ fontSize: "24.851852416992188px" }}
+            />
+            {/* </a> */}
           </li>
           <li>
-            <a href="/" target="blank">
-              <Icon
-                icon={circleinstagramIcon}
-                style={{ fontSize: "24.851852416992188px" }}
-              />
-            </a>
+            {/* <a href="/" target="blank"> */}
+            <Icon
+              icon={circleinstagramIcon}
+              style={{ fontSize: "24.851852416992188px" }}
+            />
+            {/* </a> */}
           </li>
         </ul>
       </div>

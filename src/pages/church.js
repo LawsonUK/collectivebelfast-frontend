@@ -1,21 +1,44 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Banner from "../components/banner"
+import { graphql } from "gatsby"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <h1>Church</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Banner
+      imageData={
+        data.allStrapiChurch.nodes[0].bannerimage.childImageSharp.fluid
+      }
+      text={data.allStrapiChurch.nodes[0].bannertext}
+      markdown={true}
+    />
+    <div className="row"></div>
+    <div className="row dark"></div>
+    <div className="row"></div>
+    <div className="row dark"></div>
+    <div className="row"></div>
+    <div className="row"></div>
   </Layout>
 )
+
+export const query = graphql`
+  {
+    allStrapiChurch {
+      nodes {
+        bannertext
+        bannerimage {
+          childImageSharp {
+            fluid(maxWidth: 1310, jpegQuality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

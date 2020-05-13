@@ -9,6 +9,10 @@
   background-color: black;
   overflow: hidden;
 
+  a {
+    color: #2cf9bf;
+  }
+
   .card-bg {
     position: absolute !important;
     top: 0;
@@ -19,7 +23,7 @@
     background-size: cover;
     border-radius: 10px;
     z-index: 0;
-    opacity: 0.5 !important;
+    opacity: 0.4 !important;
   }
 
   .card-content {
