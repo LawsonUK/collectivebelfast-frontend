@@ -3,12 +3,20 @@
   flex-direction: row;
   padding: 70px 62px;
 
+  > div:first-child {
+    padding-right: 100px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 155%;
+  }
+
   div {
     .teacher {
-      display: flex;
+      display: inline-flex;
       flex-direction: row;
       align-items: center;
-      position: absolute;
+      margin-top: 50px;
 
       > div:first-child {
         border-radius: 100%;
@@ -23,6 +31,18 @@
       h2 {
         margin-top: 7px;
         margin-bottom: 24px;
+      }
+
+      ul {
+        list-style: none;
+        display: inline-flex;
+        li {
+          margin-right: 10px;
+
+          &:last-child {
+            margin-right: 0px;
+          }
+        }
       }
     }
 

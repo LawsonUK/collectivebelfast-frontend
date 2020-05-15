@@ -1,0 +1,17 @@
+.church {
+  .row {
+    color: black;
+    width: 100%;
+
+    > div {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .image > div {
+    max-width: 640px;
+    border-radius: 10px;
+  }
+}

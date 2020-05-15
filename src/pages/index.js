@@ -7,12 +7,17 @@ import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Card from "../components/card"
 
+import { Icon } from "@iconify/react"
+import facebookIcon from "@iconify/icons-cib/facebook"
+import twitterCircleFilled from "@iconify/icons-ant-design/twitter-circle-filled"
+import circleinstagramIcon from "@iconify/icons-whh/circleinstagram"
+
 import "./index.scss"
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO
-      title="Collective"
+      title="Home"
       description="Collective is a network of Home Churches in and around Belfast, Northern Ireland. We meet in each other's houses every week to study the Bible, to pray, and to build and enjoy the kind of close Christian community described in the New Testament."
     />
     <Banner
@@ -54,17 +59,32 @@ const IndexPage = ({ data }) => (
             <Link to="/">{data.allStrapiTeaching.nodes[0].teacher.name}</Link>
           </span>
         </div>
-        {/* <ul>
+        <ul>
           <li>
-            <a href=""></a>
+            {/* <a href="/" target="blank"> */}
+            <Icon
+              icon={twitterCircleFilled}
+              style={{ fontSize: "27.259260177612305px" }}
+            />
+            {/* </a> */}
           </li>
           <li>
-            <a href=""></a>
+            {/* <a href="/" target="blank"> */}
+            <Icon
+              icon={facebookIcon}
+              style={{ fontSize: "24.851852416992188px" }}
+            />
+            {/* </a> */}
           </li>
           <li>
-            <a href=""></a>
+            {/* <a href="/" target="blank"> */}
+            <Icon
+              icon={circleinstagramIcon}
+              style={{ fontSize: "24.851852416992188px" }}
+            />
+            {/* </a> */}
           </li>
-        </ul> */}
+        </ul>
       </div>
       <div>
         <Link to={`/teachings/${data.allStrapiTeaching.nodes[0].slug}`}>

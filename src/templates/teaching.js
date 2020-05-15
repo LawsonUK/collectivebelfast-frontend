@@ -23,8 +23,8 @@ const Teaching = ({ data }) => {
     <Layout>
       <div>
         <h1>{teaching.title}</h1>
-        <div className="uk-section">
-          <div className="uk-container uk-container-small">
+        <div>
+          <div>
             <p>
               <Moment format="MMM Do YYYY">{teaching.publishedon}</Moment>
             </p>

@@ -23,8 +23,8 @@ const Article = ({ data }) => {
     <Layout>
       <div>
         <h1>{article.title}</h1>
-        <div className="uk-section">
-          <div className="uk-container uk-container-small">
+        <div>
+          <div>
             <p>
               <Moment format="MMM Do YYYY">{article.published_at}</Moment>
             </p>
