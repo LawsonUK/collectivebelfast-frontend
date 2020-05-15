@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import moment from "moment"
 import BackgroundImage from "gatsby-background-image"
+import Img from "gatsby-image"
 
 import "./card.scss"
 
@@ -22,7 +23,10 @@ const Card = ({ article }) => {
         </span>
         <p>{article.excerpt}</p>
         <div className="teacher">
-          <img src={article.user.avatar.publicURL} alt="teacher" />
+          <Img
+            fluid={article.user.avatar.childImageSharp.fluid}
+            alt="teacher"
+          />
           <span>
             <Link to="/">{article.user.username}</Link>
           </span>

@@ -11,7 +11,10 @@ import "./index.scss"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO
+      title="Collective"
+      description="Collective is a network of Home Churches in and around Belfast, Northern Ireland. We meet in each other's houses every week to study the Bible, to pray, and to build and enjoy the kind of close Christian community described in the New Testament."
+    />
     <Banner
       imageData={
         data.allStrapiHomepage.nodes[0].BannerImage.childImageSharp.fluid
@@ -33,12 +36,24 @@ const IndexPage = ({ data }) => (
     </div>
     <div className="row dark home-teaching">
       <div>
-        <Link to="/teachings">Teaching</Link>
+        <Link to="/teachings/">Teaching</Link>
         <h2>
-          <Link to="/teachings">{data.allStrapiTeaching.nodes[0].title}</Link>
+          <Link to={`/teachings/${data.allStrapiTeaching.nodes[0].slug}`}>
+            {data.allStrapiTeaching.nodes[0].title}
+          </Link>
         </h2>
         <span>{data.allStrapiTeaching.nodes[0].excerpt}</span>
-        <div className="teacher"></div>
+        <div className="teacher">
+          <Img
+            fluid={
+              data.allStrapiTeaching.nodes[0].teacher.profile.childImageSharp
+                .fluid
+            }
+          />
+          <span>
+            <Link to="/">{data.allStrapiTeaching.nodes[0].teacher.name}</Link>
+          </span>
+        </div>
         {/* <ul>
           <li>
             <a href=""></a>
@@ -52,7 +67,7 @@ const IndexPage = ({ data }) => (
         </ul> */}
       </div>
       <div>
-        <Link to="/teachings">
+        <Link to={`/teachings/${data.allStrapiTeaching.nodes[0].slug}`}>
           <Img
             fluid={
               data.allStrapiTeaching.nodes[0].featured_image.childImageSharp
@@ -95,7 +110,11 @@ export const query = graphql`
         user {
           username
           avatar {
-            publicURL
+            childImageSharp {
+              fluid(maxWidth: 42, jpegQuality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
           }
         }
         featured_image {
@@ -128,6 +147,13 @@ export const query = graphql`
         excerpt
         teacher {
           name
+          profile {
+            childImageSharp {
+              fluid(maxWidth: 42, jpegQuality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
         }
         featured_image {
           childImageSharp {

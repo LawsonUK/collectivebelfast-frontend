@@ -2,12 +2,24 @@
   display: flex;
   flex-direction: row;
   padding: 70px 62px;
+
   div {
+    .teacher {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: absolute;
+
+      > div:first-child {
+        border-radius: 100%;
+        width: 42px;
+        height: 42px;
+        margin-right: 10px;
+      }
+    }
     width: 50%;
 
     &:first-child {
-      padding-right: 120px;
-
       h2 {
         margin-top: 7px;
         margin-bottom: 24px;

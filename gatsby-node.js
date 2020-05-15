@@ -17,6 +17,13 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+        teachings: allStrapiTeaching {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
       }
     `
   )
@@ -25,7 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors
   }
 
-  // Create blog articles pages.
+  // Create articles pages.
   const articles = result.data.articles.edges
   articles.forEach((article, index) => {
     createPage({
@@ -33,6 +40,18 @@ exports.createPages = async ({ graphql, actions }) => {
       component: require.resolve("./src/templates/article.js"),
       context: {
         slug: article.node.slug,
+      },
+    })
+  })
+
+  // Create teaching pages
+  const teachings = result.data.teachings.edges
+  teachings.forEach((teaching, index) => {
+    createPage({
+      path: `/teachings/${teaching.node.slug}`,
+      component: require.resolve("./src/templates/teaching.js"),
+      context: {
+        slug: teaching.node.slug,
       },
     })
   })
