@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => (
       <h2>
         <Link to="/articles">Latest Articles</Link>
       </h2>
-      <ul>
+      <ul className="list">
         {data.allStrapiArticle.nodes.map(article => (
           <li key={article.id}>
             <Card article={article} />

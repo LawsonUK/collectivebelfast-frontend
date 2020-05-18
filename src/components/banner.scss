@@ -7,6 +7,7 @@
   border-radius: 10px;
   background-color: black;
   overflow: hidden;
+  transition: 0.5s;
 
   .banner-bg {
     position: absolute !important;
@@ -21,6 +22,16 @@
 
     &::before {
       border-radius: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 1330px) {
+    .banner-bg {
+      border-radius: 0px;
+
+      &::before {
+        border-radius: 0px;
+      }
     }
   }
 
@@ -43,5 +54,11 @@
   }
   a {
     color: #2cf9bf;
+  }
+}
+
+@media only screen and (max-width: 1330px) {
+  .banner {
+    border-radius: 0px;
   }
 }
