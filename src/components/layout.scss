@@ -60,7 +60,15 @@ body {
     li {
       display: inline-flex;
       width: 33.33%;
-      padding: 10px;
+      padding: 10px 10px 0px 10px;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
     }
   }
 
@@ -73,10 +81,15 @@ body {
       justify-content: center;
       li {
         width: 50%;
+        padding: 15px;
       }
 
       li:first-child {
         margin-left: 0;
+      }
+
+      li:last-child {
+        padding-bottom: 0px;
       }
     }
   }
@@ -86,10 +99,15 @@ body {
       justify-content: center;
       li {
         width: 100%;
+        padding: 10px 0;
       }
 
       li:first-child {
         margin-left: 0;
+      }
+
+      li:last-child {
+        padding-bottom: 0px;
       }
     }
   }
