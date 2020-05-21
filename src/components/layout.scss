@@ -18,16 +18,14 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1310px;
-}
 
-@media only screen and (max-width: 1330px) {
-  .container {
+  @media only screen and (max-width: 1330px) {
     max-width: 100%;
   }
 }
 
 .row {
-  padding: 34px 0 99px 0px;
+  padding: 34px 0 72px 0px;
   border-radius: 10px;
   color: white;
   transition: 0.5s;
@@ -46,6 +44,10 @@ body {
         text-decoration: none;
         border-bottom: 4px solid black;
       }
+    }
+
+    @media only screen and (max-width: 1280px) {
+      text-align: center;
     }
   }
 
@@ -70,14 +72,8 @@ body {
         padding-right: 0;
       }
     }
-  }
 
-  @media only screen and (max-width: 1280px) {
-    h2 {
-      text-align: center;
-    }
-
-    > ul.list {
+    @media only screen and (max-width: 1280px) {
       justify-content: center;
       li {
         width: 50%;
@@ -92,10 +88,8 @@ body {
         padding-bottom: 0px;
       }
     }
-  }
 
-  @media only screen and (max-width: 820px) {
-    > ul.list {
+    @media only screen and (max-width: 780px) {
       justify-content: center;
       li {
         width: 100%;
@@ -123,10 +117,8 @@ body {
       text-decoration: underline;
     }
   }
-}
 
-@media only screen and (max-width: 1330px) {
-  .row {
+  @media only screen and (max-width: 1330px) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     border-radius: 0px;
@@ -165,8 +157,6 @@ body {
   }
 
   @media only screen and (max-width: 1330px) {
-    .dark {
-      max-width: 100%;
-    }
+    max-width: 100%;
   }
 }

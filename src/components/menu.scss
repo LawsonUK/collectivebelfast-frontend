@@ -1,5 +1,9 @@
-nav {
+nav.main-menu {
   display: inline-flex;
+
+  @media only screen and (max-width: 630px) {
+    display: none;
+  }
 
   ul {
     list-style: none;

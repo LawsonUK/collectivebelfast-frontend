@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Menu from "./menu"
+import MobileMenu from "./mobileMenu"
 
 import "./header.scss"
 
@@ -12,7 +13,7 @@ const Header = ({ siteTitle }) => (
     </h1>
 
     <Menu />
-
+    <MobileMenu />
     <div>
       Sunday 11:00am <span className="dot"></span> Dot
     </div>

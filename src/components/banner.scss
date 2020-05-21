@@ -22,15 +22,23 @@
 
     &::before {
       border-radius: 10px;
+      transition: 0.5s;
     }
-  }
 
-  @media only screen and (max-width: 1330px) {
-    .banner-bg {
+    @media only screen and (max-width: 1330px) {
       border-radius: 0px;
 
       &::before {
         border-radius: 0px;
+      }
+    }
+
+    @media only screen and (max-width: 800px) {
+      border-radius: 0px;
+
+      &::before {
+        border-radius: 0px;
+        background-position: -100px !important;
       }
     }
   }
@@ -51,14 +59,38 @@
         line-height: 172.3%;
       }
     }
+
+    @media only screen and (max-width: 970px) {
+      border-radius: 0px;
+      margin: 0 auto;
+      right: 0;
+      left: 0;
+      padding: 0 15px;
+
+      &::before {
+        border-radius: 0px;
+      }
+    }
+
+    @media only screen and (max-width: 580px) {
+      border-radius: 0px;
+      margin: 0 auto;
+      right: 0;
+      left: 0;
+      width: 80%;
+      top: 80px;
+
+      &::before {
+        border-radius: 0px;
+      }
+    }
   }
+
   a {
     color: #2cf9bf;
   }
-}
 
-@media only screen and (max-width: 1330px) {
-  .banner {
+  @media only screen and (max-width: 1330px) {
     border-radius: 0px;
   }
 }

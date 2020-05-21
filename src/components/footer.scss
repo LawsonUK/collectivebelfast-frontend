@@ -63,13 +63,16 @@ footer {
       color: #000000;
     }
   }
-}
 
-@media only screen and (max-width: 1330px) {
-  footer {
+  @media only screen and (max-width: 1330px) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-top: 45px;
     padding-bottom: 60px;
+  }
+
+  @media only screen and (max-width: 680px) {
+    nav {
+    }
   }
 }

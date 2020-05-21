@@ -25,6 +25,7 @@ header {
     font-weight: bold;
     font-size: 16px;
     line-height: 27px;
+    transition: 0.5s;
 
     span.dot {
       background-color: #00c78f;
@@ -34,11 +35,11 @@ header {
       margin: 3px 7px 7px 7px;
       // box-shadow: -2px 1px 5px 0px rgba(176, 176, 176, 1);
     }
+    @media only screen and (max-width: 960px) {
+      display: none;
+    }
   }
-}
-
-@media only screen and (max-width: 1330px) {
-  header {
+  @media only screen and (max-width: 1330px) {
     padding: 1.85rem 1.5rem;
   }
 }

@@ -4,7 +4,7 @@ import "./menu.scss"
 
 const Menu = () => {
   return (
-    <nav>
+    <nav className="main-menu">
       <ul>
         <li>
           <Link to="/church" activeClassName="active">
