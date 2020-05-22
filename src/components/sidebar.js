@@ -1,12 +1,12 @@
 import React from "react"
-import { scaleDown as Menu } from "react-burger-menu"
+import { reveal as Menu } from "react-burger-menu"
 import { Link } from "gatsby"
 
 import "./sidebar.scss"
 
 const SideBar = props => {
   return (
-    <Menu {...props}>
+    <Menu {...props} right>
       <Link to="/" className="menu-item" activeClassName="active">
         Home
       </Link>
