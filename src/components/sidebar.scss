@@ -1,5 +1,37 @@
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.8) !important;
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+.bm-menu-wrap {
+  .bm-menu {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+  }
+  h1 {
+    display: inline-flex;
+    margin: 0;
+    border-bottom: 4px solid #00c78f;
+    margin-bottom: 55px;
+    outline: none;
+
+    a {
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 28px;
+      line-height: 34px;
+      color: #000000;
+      outline: none;
+    }
+  }
+
+  background: rgba(255, 255, 255, 1);
+  padding: 25px 15px;
+  a {
+    margin-bottom: 35px;
+    font-weight: bold;
+  }
 }
 
 .bm-burger-button {

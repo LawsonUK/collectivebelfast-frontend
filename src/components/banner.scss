@@ -15,29 +15,26 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background-position: center;
-    background-size: cover;
     border-radius: 10px;
     opacity: 0.4 !important;
 
-    &::before {
-      border-radius: 10px;
-      transition: 0.5s;
-    }
-
     @media only screen and (max-width: 1330px) {
       border-radius: 0px;
-
-      &::before {
-        border-radius: 0px;
-      }
     }
 
     @media only screen and (max-width: 800px) {
       border-radius: 0px;
+    }
 
-      &::before {
+    &::before {
+      border-radius: 10px;
+      transition: 0.5s;
+
+      @media only screen and (max-width: 1330px) {
         border-radius: 0px;
+      }
+
+      @media only screen and (max-width: 800px) {
         background-position: -100px !important;
       }
     }
