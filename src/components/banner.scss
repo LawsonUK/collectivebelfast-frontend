@@ -26,7 +26,8 @@
       border-radius: 0px;
     }
 
-    &::before {
+    &::before,
+    &::after {
       border-radius: 10px;
       transition: 0.5s;
 
