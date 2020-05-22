@@ -1,18 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Card from "../components/card"
-
-import { Icon } from "@iconify/react"
-import facebookIcon from "@iconify/icons-cib/facebook"
-import twitterCircleFilled from "@iconify/icons-ant-design/twitter-circle-filled"
-import circleinstagramIcon from "@iconify/icons-whh/circleinstagram"
-
-import "./index.scss"
+import FeaturedTeaching from "../components/featuredteaching"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -39,64 +32,7 @@ const IndexPage = ({ data }) => (
         ))}
       </ul>
     </div>
-    <div className="row dark home-teaching">
-      <div>
-        <Link to="/teachings/">Teaching</Link>
-        <h2>
-          <Link to={`/teachings/${data.allStrapiTeaching.nodes[0].slug}`}>
-            {data.allStrapiTeaching.nodes[0].title}
-          </Link>
-        </h2>
-        <span>{data.allStrapiTeaching.nodes[0].excerpt}</span>
-        <div className="teacher">
-          <Img
-            fluid={
-              data.allStrapiTeaching.nodes[0].teacher.profile.childImageSharp
-                .fluid
-            }
-          />
-          <span>
-            <Link to="/">{data.allStrapiTeaching.nodes[0].teacher.name}</Link>
-          </span>
-        </div>
-        <ul>
-          <li>
-            {/* <a href="/" target="blank"> */}
-            <Icon
-              icon={twitterCircleFilled}
-              style={{ fontSize: "27.259260177612305px" }}
-            />
-            {/* </a> */}
-          </li>
-          <li>
-            {/* <a href="/" target="blank"> */}
-            <Icon
-              icon={facebookIcon}
-              style={{ fontSize: "24.851852416992188px" }}
-            />
-            {/* </a> */}
-          </li>
-          <li>
-            {/* <a href="/" target="blank"> */}
-            <Icon
-              icon={circleinstagramIcon}
-              style={{ fontSize: "24.851852416992188px" }}
-            />
-            {/* </a> */}
-          </li>
-        </ul>
-      </div>
-      <div>
-        <Link to={`/teachings/${data.allStrapiTeaching.nodes[0].slug}`}>
-          <Img
-            fluid={
-              data.allStrapiTeaching.nodes[0].featured_image.childImageSharp
-                .fluid
-            }
-          />
-        </Link>
-      </div>
-    </div>
+    <FeaturedTeaching teaching={data.allStrapiTeaching.nodes[0]} />
   </Layout>
 )
 

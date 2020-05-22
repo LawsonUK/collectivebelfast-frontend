@@ -3,12 +3,21 @@
   flex-direction: row;
   padding: 70px 62px;
 
+  @media only screen and (max-width: 940px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
   > div:first-child {
     padding-right: 100px;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 155%;
+
+    @media only screen and (max-width: 940px) {
+      padding-right: 0px;
+    }
   }
 
   div {
@@ -17,6 +26,11 @@
       flex-direction: row;
       align-items: center;
       margin-top: 50px;
+
+      @media only screen and (max-width: 940px) {
+        flex-direction: column;
+        margin-top: 30px;
+      }
 
       > div:first-child {
         border-radius: 100%;
@@ -27,15 +41,33 @@
     }
     width: 50%;
 
+    @media only screen and (max-width: 940px) {
+      width: 100%;
+    }
+
     &:first-child {
       h2 {
         margin-top: 7px;
         margin-bottom: 24px;
+
+        @media only screen and (max-width: 1280px) {
+          text-align: left;
+        }
+
+        @media only screen and (max-width: 940px) {
+          text-align: center;
+        }
       }
 
       ul {
         list-style: none;
         display: inline-flex;
+
+        @media only screen and (max-width: 940px) {
+          padding-left: 0;
+          margin-bottom: 30px;
+        }
+
         li {
           margin-right: 10px;
 
