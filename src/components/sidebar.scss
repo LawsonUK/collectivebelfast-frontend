@@ -1,0 +1,28 @@
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.bm-burger-button {
+  display: none;
+  position: absolute;
+  top: 38px;
+  right: 30px;
+  width: 28px;
+  height: 22px;
+
+  .bm-burger-bars {
+    background-color: black;
+  }
+  @media only screen and (max-width: 630px) {
+    display: inline-flex;
+  }
+}
+
+.bm-item-list {
+  a {
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    color: #00c78f;
+  }
+}
