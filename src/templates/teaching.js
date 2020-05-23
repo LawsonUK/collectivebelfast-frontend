@@ -21,7 +21,7 @@ const Teaching = ({ data }) => {
   const teaching = data.strapiTeaching
   return (
     <Layout>
-      <div>
+      <div className="content">
         <h1>{teaching.title}</h1>
         <div>
           <div>

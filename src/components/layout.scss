@@ -13,6 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Inter", sans-serif;
   text-rendering: optimizeLegibility;
+  line-height: 160%;
 }
 
 .container {
@@ -24,21 +25,39 @@ body {
   }
 }
 
+.content {
+  @media only screen and (max-width: 1330px) {
+    padding: 1.85rem 1.5rem;
+  }
+
+  h1 {
+    line-height: 140%;
+  }
+}
+
 .row {
-  padding: 34px 0 72px 0px;
+  padding: 34px 0 52px 0px;
   border-radius: 10px;
   color: white;
   transition: 0.5s;
 
+  &.heading {
+    padding: 0;
+    @media only screen and (max-width: 1330px) {
+      padding: 0 1.5rem;
+    }
+  }
+
   h2 {
     margin-bottom: 40px;
     text-align: left;
+
     a {
       font-weight: bold;
-      font-size: 24px;
+      font-size: 1.3rem;
       line-height: 140%;
       color: black;
-      border-bottom: 4px solid #2ab28c;
+      border-bottom: 4px solid #00c78f;
 
       &:hover {
         text-decoration: none;
@@ -62,7 +81,7 @@ body {
     li {
       display: inline-flex;
       width: 33.33%;
-      padding: 10px 10px 0px 10px;
+      padding: 0px 10px 0px 10px;
 
       &:first-child {
         padding-left: 0;

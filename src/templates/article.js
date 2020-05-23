@@ -21,7 +21,7 @@ const Article = ({ data }) => {
   const article = data.strapiArticle
   return (
     <Layout>
-      <div>
+      <div className="content">
         <h1>{article.title}</h1>
         <div>
           <div>

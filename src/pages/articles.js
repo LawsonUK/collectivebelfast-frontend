@@ -1,21 +1,83 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Articles" />
-    <h1>Articles</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
+
+export const query = graphql`
+  {
+    allStrapiArticle {
+      nodes {
+        content
+        title
+        slug
+        published_on
+        id
+        excerpt
+        user {
+          username
+          avatar {
+            childImageSharp {
+              fluid(maxWidth: 42, jpegQuality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+        featured_image {
+          childImageSharp {
+            fluid(maxWidth: 394, jpegQuality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+    allStrapiHomepage {
+      nodes {
+        BannerImage {
+          childImageSharp {
+            fluid(maxWidth: 1310, jpegQuality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+          publicURL
+        }
+        BannerText
+      }
+    }
+    allStrapiTeaching {
+      nodes {
+        slug
+        title
+        id
+        excerpt
+        teacher {
+          name
+          profile {
+            childImageSharp {
+              fluid(maxWidth: 42, jpegQuality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+        featured_image {
+          childImageSharp {
+            fluid(maxWidth: 617, jpegQuality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

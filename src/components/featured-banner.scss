@@ -1,0 +1,95 @@
+.home-teaching {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  text-align: center;
+  z-index: 1;
+  min-height: 400px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 70px;
+
+  a {
+    color: #2cf9bf;
+  }
+
+  @media only screen and (max-width: 940px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .featured-teaching-bg {
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 10px;
+    opacity: 0.4 !important;
+    z-index: 0;
+
+    @media only screen and (max-width: 1330px) {
+      border-radius: 0px;
+    }
+
+    @media only screen and (max-width: 800px) {
+      border-radius: 0px;
+    }
+
+    &::before,
+    &::after {
+      border-radius: 10px;
+      transition: 0.5s;
+
+      @media only screen and (max-width: 1330px) {
+        border-radius: 0px;
+      }
+    }
+  }
+
+  .featured-teaching-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    width: 50%;
+    flex-direction: column;
+
+    @media only screen and (max-width: 800px) {
+      width: 80%;
+    }
+
+    .teacher {
+      display: flex;
+      flex-direction: column;
+      margin: 30px 0px;
+      justify-content: center;
+      align-items: center;
+
+      @media only screen and (max-width: 940px) {
+        margin-top: 30px;
+      }
+
+      > div:first-child {
+        border-radius: 100%;
+        width: 42px;
+        height: 42px;
+        margin-right: 10px;
+        display: flex;
+      }
+    }
+
+    h2 {
+      margin-top: 7px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .gatsby-image-wrapper {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+}

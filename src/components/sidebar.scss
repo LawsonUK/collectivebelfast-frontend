@@ -1,3 +1,11 @@
+.sidebar {
+  .social {
+    margin-top: 70px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .bm-overlay {
   background: rgba(0, 0, 0, 0.9) !important;
 }
@@ -56,5 +64,6 @@
     text-align: center;
     text-decoration: none;
     color: #00c78f;
+    font-size: 1.2rem;
   }
 }

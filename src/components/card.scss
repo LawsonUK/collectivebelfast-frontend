@@ -1,7 +1,7 @@
 .card {
   width: 100%;
-  height: 402px;
-  padding: 65px 45px 38px 45px;
+  min-height: 402px;
+  padding: 55px 45px;
   position: relative;
   border-radius: 10px;
   color: white;
@@ -28,7 +28,7 @@
 
   .card-content {
     position: relative;
-    line-height: 140%;
+    line-height: 160%;
     font-weight: bold;
 
     h3 {

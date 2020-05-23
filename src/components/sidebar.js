@@ -1,6 +1,7 @@
 import React from "react"
 import { slide as Menu } from "react-burger-menu"
 import { Link } from "gatsby"
+import Social from "../components/social"
 
 import "./sidebar.scss"
 
@@ -33,12 +34,15 @@ class SideBar extends React.Component {
   render() {
     return (
       <Menu
+        className="sidebar"
         isOpen={this.state.menuOpen}
         onStateChange={state => this.handleStateChange(state)}
         right
       >
         <h1>
-          <Link to="/">Collective</Link>
+          <Link onClick={() => this.closeMenu()} to="/">
+            Collective
+          </Link>
         </h1>
 
         <Link
@@ -84,6 +88,7 @@ class SideBar extends React.Component {
         >
           Visit
         </Link>
+        <Social />
       </Menu>
     )
   }

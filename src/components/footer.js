@@ -1,12 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import Menu from "../components/menu"
-import { Icon } from "@iconify/react"
-import facebookIcon from "@iconify/icons-cib/facebook"
-import twitterCircleFilled from "@iconify/icons-ant-design/twitter-circle-filled"
-import circleinstagramIcon from "@iconify/icons-whh/circleinstagram"
 
 import "./footer.scss"
+import Social from "./social"
 
 const Footer = ({ siteTitle }) => {
   return (
@@ -23,32 +20,7 @@ const Footer = ({ siteTitle }) => {
           Ireland. Collective is registered as a charity for tax purposes with
           HMRC
         </span>
-        <ul>
-          <li>
-            {/* <a href="/" target="blank"> */}
-            <Icon
-              icon={twitterCircleFilled}
-              style={{ fontSize: "27.259260177612305px" }}
-            />
-            {/* </a> */}
-          </li>
-          <li>
-            {/* <a href="/" target="blank"> */}
-            <Icon
-              icon={facebookIcon}
-              style={{ fontSize: "24.851852416992188px" }}
-            />
-            {/* </a> */}
-          </li>
-          <li>
-            {/* <a href="/" target="blank"> */}
-            <Icon
-              icon={circleinstagramIcon}
-              style={{ fontSize: "24.851852416992188px" }}
-            />
-            {/* </a> */}
-          </li>
-        </ul>
+        <Social />
       </div>
     </footer>
   )

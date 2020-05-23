@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
 import Card from "../components/card"
-import FeaturedTeaching from "../components/featuredteaching"
+import FeaturedBanner from "../components/featured-banner"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -32,7 +32,12 @@ const IndexPage = ({ data }) => (
         ))}
       </ul>
     </div>
-    <FeaturedTeaching teaching={data.allStrapiTeaching.nodes[0]} />
+    <div className="row heading">
+      <h2>
+        <Link to="/teachings">Latest Teachings</Link>
+      </h2>
+    </div>
+    <FeaturedBanner teaching={data.allStrapiTeaching.nodes[0]} />
   </Layout>
 )
 
