@@ -89,6 +89,11 @@ class SideBar extends React.Component {
           Visit
         </Link>
         <Social />
+        <span>
+          Collective is registered with the Charity Commission for Northern
+          Ireland. Collective is registered as a charity for tax purposes with
+          HMRC.
+        </span>
       </Menu>
     )
   }

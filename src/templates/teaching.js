@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import ReactMarkdown from "react-markdown"
 import Moment from "react-moment"
+import ReactAudioPlayer from "react-audio-player"
 
 import Layout from "../components/layout"
 
@@ -28,6 +29,9 @@ const Teaching = ({ data }) => {
             <p>
               <Moment format="MMM Do YYYY">{teaching.publishedon}</Moment>
             </p>
+            {teaching.audio && (
+              <ReactAudioPlayer src={teaching.audio.publicURL} controls />
+            )}
             <ReactMarkdown source={teaching.description} />
           </div>
         </div>

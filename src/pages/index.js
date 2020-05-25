@@ -37,7 +37,11 @@ const IndexPage = ({ data }) => (
         <Link to="/teachings">Latest Teachings</Link>
       </h2>
     </div>
-    <FeaturedBanner teaching={data.allStrapiTeaching.nodes[0]} />
+    <FeaturedBanner
+      teaching={
+        data.allStrapiTeaching.nodes[data.allStrapiTeaching.nodes.length - 1]
+      }
+    />
   </Layout>
 )
 

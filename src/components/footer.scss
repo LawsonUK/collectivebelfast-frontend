@@ -8,11 +8,18 @@ footer {
     justify-content: space-between;
     align-items: center;
 
+    @media only screen and (max-width: 630px) {
+      flex-direction: column;
+      justify-content: start;
+      display: inline-block;
+      width: 100%;
+    }
+
     span {
       font-style: normal;
       font-weight: normal;
       font-size: 12px;
-      line-height: 15px;
+      line-height: 20px;
       color: #525252;
     }
 
@@ -20,12 +27,21 @@ footer {
       border-bottom: 1px #e5e5e5 solid;
       padding-bottom: 21px;
       margin-bottom: 28px;
+
+      @media only screen and (max-width: 630px) {
+        text-align: left;
+      }
     }
   }
   h1 {
     display: inline-flex;
     margin: 0;
     border-bottom: 4px solid #00c78f;
+
+    @media only screen and (max-width: 630px) {
+      display: inline-block;
+      margin-bottom: 40px;
+    }
 
     a {
       text-decoration: none;
@@ -44,8 +60,19 @@ footer {
     padding-bottom: 60px;
   }
 
-  @media only screen and (max-width: 680px) {
-    nav {
+  @media only screen and (max-width: 630px) {
+    nav.main-menu {
+      display: flex;
+      ul {
+        padding: 0;
+        li {
+          margin-right: 30px;
+        }
+      }
+    }
+
+    .social {
+      margin-top: 40px;
     }
   }
 }

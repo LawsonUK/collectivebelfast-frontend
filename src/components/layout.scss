@@ -13,7 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Inter", sans-serif;
   text-rendering: optimizeLegibility;
-  line-height: 160%;
+  line-height: 190%;
 }
 
 .container {
@@ -76,9 +76,9 @@ body {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    // justify-content: space-between;
 
-    li {
+    > li {
       display: inline-flex;
       width: 33.33%;
       padding: 0px 10px 0px 10px;
@@ -94,16 +94,16 @@ body {
 
     @media only screen and (max-width: 1280px) {
       justify-content: center;
-      li {
+      > li {
         width: 50%;
         padding: 15px;
       }
 
-      li:first-child {
+      > li:first-child {
         margin-left: 0;
       }
 
-      li:last-child {
+      > li:last-child {
         padding-bottom: 0px;
       }
     }
@@ -167,8 +167,11 @@ body {
       line-height: 140%;
       color: #2cf9bf;
       border-bottom: none;
+      text-decoration: none;
 
-      &:hover {
+      &:hover,
+      &:visited,
+      &:active {
         text-decoration: underline;
         border-bottom: none;
       }

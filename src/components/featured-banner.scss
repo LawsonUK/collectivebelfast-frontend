@@ -12,8 +12,18 @@
   padding-top: 100px;
   padding-bottom: 70px;
 
+  @media only screen and (max-width: 630px) {
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
+
   a {
     color: #2cf9bf;
+    text-decoration: none;
+  }
+
+  .social-share {
+    margin-left: -10px;
   }
 
   @media only screen and (max-width: 940px) {
@@ -28,7 +38,7 @@
     right: 0;
     left: 0;
     border-radius: 10px;
-    opacity: 0.4 !important;
+    opacity: 0.28 !important;
     z-index: 0;
 
     @media only screen and (max-width: 1330px) {
@@ -85,6 +95,9 @@
       margin-top: 7px;
       margin-bottom: 24px;
       text-align: center;
+      a {
+        font-size: 2rem;
+      }
     }
 
     .gatsby-image-wrapper {

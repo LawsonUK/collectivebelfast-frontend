@@ -29,7 +29,7 @@ const Social = () => {
         {/* <a href="/" target="blank"> */}
         <Icon
           icon={circleinstagramIcon}
-          style={{ fontSize: "24.851852416992188px" }}
+          style={{ fontSize: "25.851852416992188px" }}
         />
         {/* </a> */}
       </li>

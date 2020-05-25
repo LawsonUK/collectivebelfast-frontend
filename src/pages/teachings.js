@@ -7,34 +7,35 @@ import FeaturedBanner from "../components/featured-banner"
 import CardTeaching from "../components/card-teaching"
 
 const IndexPage = ({ data }) => {
-  const latest_teachings =
-    data.allStrapiTeaching.nodes.length > 1
-      ? data.allStrapiTeaching.nodes.shift()
-      : []
+  console.log(data)
+  const teachings =
+    data.allStrapiTeaching.nodes.length > 0 ? data.allStrapiTeaching.nodes : []
+  const latest_teaching = teachings[0]
 
   return (
     <Layout>
       <SEO title="Teachings" />
-      <FeaturedBanner teaching={data.allStrapiTeaching.nodes[0]} />
+      <FeaturedBanner teaching={latest_teaching} />
       <div className="row">
         <h2>
           <Link to="/articles">Latest Teachings</Link>
         </h2>
         <ul className="list">
-          {latest_teachings.map(teaching => (
+          {teachings.map(teaching => (
             <li key={teaching.id}>
               <CardTeaching teaching={teaching} />
             </li>
           ))}
         </ul>
       </div>
+      <div className="row dark"></div>
     </Layout>
   )
 }
 
 export const query = graphql`
   {
-    allStrapiTeaching {
+    allStrapiTeaching(sort: { order: DESC, fields: publishedon }) {
       nodes {
         slug
         title

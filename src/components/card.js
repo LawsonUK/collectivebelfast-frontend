@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import moment from "moment"
 import BackgroundImage from "gatsby-background-image"
 import Img from "gatsby-image"
-// import Share from "../components/share"
+import Share from "../components/share"
 
 import "./card.scss"
 
@@ -32,6 +32,7 @@ const Card = ({ article }) => {
             <Link to="/">{article.user.username}</Link>
           </span>
         </div>
+        <Share />
       </div>
     </div>
   )
