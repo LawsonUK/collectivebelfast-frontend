@@ -64,7 +64,7 @@ const text = (
 
 export const query = graphql`
   {
-    allStrapiArticle {
+    allStrapiArticle(sort: { order: DESC, fields: published_on }) {
       nodes {
         content
         title
@@ -91,6 +91,7 @@ export const query = graphql`
         }
       }
     }
+
     allStrapiHomepage {
       nodes {
         BannerImage {

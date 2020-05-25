@@ -26,12 +26,27 @@ body {
 }
 
 .content {
+  max-width: 900px;
+  margin: 0 auto;
+
   @media only screen and (max-width: 1330px) {
-    padding: 1.85rem 1.5rem;
+    padding: 1.85rem 2rem;
   }
 
   h1 {
     line-height: 140%;
+    text-align: center;
+  }
+
+  .date {
+    text-align: center;
+  }
+
+  .gatsby-image-wrapper {
+    margin: 45px 20px;
+    @media only screen and (max-width: 780px) {
+      margin: 0;
+    }
   }
 }
 
