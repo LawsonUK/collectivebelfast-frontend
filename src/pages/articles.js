@@ -1,14 +1,36 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import FeaturedArticle from "../components/featured-article"
+import Card from "../components/card"
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Articles" />
-  </Layout>
-)
+const IndexPage = ({ data }) => {
+  const articles =
+    data.allStrapiArticle.nodes.length > 0 ? data.allStrapiArticle.nodes : []
+  const article = articles[0]
+
+  return (
+    <Layout>
+      <SEO title="Articles" />
+      <FeaturedArticle article={article} />
+      <div className="row">
+        <h2>
+          <Link to="/articles">Latest Articles</Link>
+        </h2>
+        <ul className="list">
+          {articles.map(article => (
+            <li key={article.id}>
+              <Card article={article} />
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="row dark"></div>
+    </Layout>
+  )
+}
 
 export const query = graphql`
   {
@@ -33,44 +55,6 @@ export const query = graphql`
         featured_image {
           childImageSharp {
             fluid(maxWidth: 394, jpegQuality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    }
-    allStrapiHomepage {
-      nodes {
-        BannerImage {
-          childImageSharp {
-            fluid(maxWidth: 1310, jpegQuality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-          publicURL
-        }
-        BannerText
-      }
-    }
-    allStrapiTeaching {
-      nodes {
-        slug
-        title
-        id
-        excerpt
-        teacher {
-          name
-          profile {
-            childImageSharp {
-              fluid(maxWidth: 42, jpegQuality: 90) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-        featured_image {
-          childImageSharp {
-            fluid(maxWidth: 617, jpegQuality: 90) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

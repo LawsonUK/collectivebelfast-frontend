@@ -7,7 +7,6 @@ import FeaturedBanner from "../components/featured-banner"
 import CardTeaching from "../components/card-teaching"
 
 const IndexPage = ({ data }) => {
-  console.log(data)
   const teachings =
     data.allStrapiTeaching.nodes.length > 0 ? data.allStrapiTeaching.nodes : []
   const latest_teaching = teachings[0]
@@ -18,7 +17,7 @@ const IndexPage = ({ data }) => {
       <FeaturedBanner teaching={latest_teaching} />
       <div className="row">
         <h2>
-          <Link to="/articles">Latest Teachings</Link>
+          <Link to="/teachings">Latest Teachings</Link>
         </h2>
         <ul className="list">
           {teachings.map(teaching => (
