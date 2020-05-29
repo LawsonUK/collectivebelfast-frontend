@@ -1,17 +1,22 @@
 nav.main-menu {
   display: inline-flex;
 
-  @media only screen and (max-width: 630px) {
-    display: none;
-  }
-
   ul {
     list-style: none;
     display: flex;
     margin: 0;
 
+    @media only screen and (max-width: 920px) {
+      padding: 0;
+    }
+
     li {
       margin-right: 50px;
+
+      @media only screen and (max-width: 920px) {
+        padding: 0;
+        margin-right: 30px;
+      }
 
       &:last-child {
         margin-right: 0px;

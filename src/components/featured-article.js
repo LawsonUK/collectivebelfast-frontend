@@ -16,7 +16,7 @@ const FeaturedArticle = ({ article }) => {
       ></BackgroundImage>
       <div className="featured-teaching-content">
         <h2>
-          <Link to={`/teachings/${article.slug}`}>{article.title}</Link>
+          <Link to={`/articles/${article.slug}`}>{article.title}</Link>
         </h2>
         <span>{article.excerpt}</span>
         <div className="teacher">

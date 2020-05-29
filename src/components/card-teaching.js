@@ -29,7 +29,9 @@ const CardTeaching = ({ teaching }) => {
             alt="teacher"
           />
           <span>
-            <Link to="/">{teaching.teacher.name}</Link>
+            <Link to={`/teachers/${teaching.teacher.slug}`}>
+              {teaching.teacher.name}
+            </Link>
           </span>
         </div>
         <Share />

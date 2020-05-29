@@ -7,22 +7,30 @@ const Menu = () => {
     <nav className="main-menu">
       <ul>
         <li>
-          <Link to="/church" activeClassName="active">
+          <Link to="/church" activeClassName="active" partiallyActive="active">
             Church
           </Link>
         </li>
         <li>
-          <Link to="/teachings" activeClassName="active">
+          <Link
+            to="/teachings"
+            activeClassName="active"
+            partiallyActive="active"
+          >
             Teachings
           </Link>
         </li>
         <li>
-          <Link to="/articles" activeClassName="active">
+          <Link
+            to="/articles"
+            activeClassName="active"
+            partiallyActive="active"
+          >
             Articles
           </Link>
         </li>
         <li>
-          <Link to="/visit" activeClassName="active">
+          <Link to="/visit" activeClassName="active" partiallyActive="active">
             Visit
           </Link>
         </li>

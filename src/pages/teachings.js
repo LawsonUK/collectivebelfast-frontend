@@ -27,7 +27,15 @@ const IndexPage = ({ data }) => {
           ))}
         </ul>
       </div>
-      <div className="row dark"></div>
+      <div className="row dark">
+        <h3>Teacher</h3>
+        <ul>
+          <li>
+            <Link to="/teachers/Emma-Murphy">Emma Murphy</Link>
+          </li>
+        </ul>
+        <h3>Topic</h3>
+      </div>
     </Layout>
   )
 }
@@ -42,6 +50,7 @@ export const query = graphql`
         excerpt
         teacher {
           name
+          slug
           profile {
             childImageSharp {
               fluid(maxWidth: 42, jpegQuality: 90) {

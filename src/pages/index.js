@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => (
     </div>
     <div className="row heading">
       <h2>
-        <Link to="/teachings">Latest Teachings</Link>
+        <Link to="/teachings">Latest Teaching</Link>
       </h2>
     </div>
     <FeaturedBanner
@@ -113,6 +113,7 @@ export const query = graphql`
         excerpt
         teacher {
           name
+          slug
           profile {
             childImageSharp {
               fluid(maxWidth: 42, jpegQuality: 90) {
