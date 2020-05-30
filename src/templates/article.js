@@ -2,10 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import ReactMarkdown from "react-markdown"
-import Moment from "react-moment"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
+import FeaturedArticle from "../components/featured-article"
+
 import "./article.scss"
 
 export const query = graphql`
@@ -13,6 +14,24 @@ export const query = graphql`
     strapiArticle(slug: { eq: $slug }) {
       strapiId
       title
+      excerpt
+      featured_image {
+        childImageSharp {
+          fluid(maxWidth: 394, jpegQuality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      user {
+        username
+        avatar {
+          childImageSharp {
+            fluid(maxWidth: 42, jpegQuality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
       article {
         id
         text
@@ -33,13 +52,10 @@ const Article = ({ data }) => {
   const content = data.strapiArticle
   return (
     <Layout>
+      <FeaturedArticle article={content} pageView={true} />
       <div className="content article">
-        <h1>{content.title}</h1>
         <div>
           <div>
-            <p className="date">
-              <Moment format="MMM Do YYYY">{content.published_at}</Moment>
-            </p>
             <div className="article-content">
               {content.article.map(content =>
                 content.image ? (

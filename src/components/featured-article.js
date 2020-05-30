@@ -2,11 +2,12 @@ import React from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
+import Moment from "react-moment"
 
 import "./featured-banner.scss"
 import Share from "./share"
 
-const FeaturedArticle = ({ article }) => {
+const FeaturedArticle = ({ article, pageView = false }) => {
   return (
     <div className="row dark home-teaching">
       <BackgroundImage
@@ -16,8 +17,15 @@ const FeaturedArticle = ({ article }) => {
       ></BackgroundImage>
       <div className="featured-teaching-content">
         <h2>
-          <Link to={`/articles/${article.slug}`}>{article.title}</Link>
+          {!pageView ? (
+            <Link to={`/articles/${article.slug}`}>{article.title}</Link>
+          ) : (
+            article.title
+          )}
         </h2>
+        <p className="date">
+          <Moment format="MMM Do YYYY">{article.published_at}</Moment>
+        </p>
         <span>{article.excerpt}</span>
         <div className="teacher">
           <Img fluid={article.user.avatar.childImageSharp.fluid} />
