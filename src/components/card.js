@@ -32,7 +32,7 @@ const Card = ({ article }) => {
             <Link to="/">{article.user.username}</Link>
           </span>
         </div>
-        <Share />
+        {/* <Share /> */}
       </div>
     </div>
   )

@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
+import Card from "../components/card"
 import FeaturedArticle from "../components/featured-article"
 
 import "./article.scss"
@@ -49,6 +50,7 @@ export const query = graphql`
 `
 
 const Article = ({ data }) => {
+  console.log("data", data)
   const content = data.strapiArticle
   return (
     <Layout>
@@ -69,6 +71,14 @@ const Article = ({ data }) => {
               )}
             </div>
           </div>
+        </div>
+      </div>
+      <div className="prevNext">
+        <div>
+          <Card article={content} />
+        </div>
+        <div>
+          <Card article={content} />
         </div>
       </div>
     </Layout>

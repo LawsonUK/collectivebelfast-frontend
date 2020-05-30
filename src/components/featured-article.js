@@ -16,6 +16,7 @@ const FeaturedArticle = ({ article, pageView = false }) => {
         fluid={article.featured_image.childImageSharp.fluid}
       ></BackgroundImage>
       <div className="featured-teaching-content">
+        {pageView && <Link to={`/articles/`}>Back to Articles</Link>}
         <h2>
           {!pageView ? (
             <Link to={`/articles/${article.slug}`}>{article.title}</Link>
@@ -33,7 +34,7 @@ const FeaturedArticle = ({ article, pageView = false }) => {
             <Link to="/">{article.user.username}</Link>
           </span>
         </div>
-        <Share />
+        {pageView && <Share />}
       </div>
     </div>
   )

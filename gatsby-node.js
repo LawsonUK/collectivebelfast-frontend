@@ -40,15 +40,29 @@ exports.createPages = async ({ graphql, actions }) => {
   }
   // Create articles pages.
   const articles = result.data.articles.edges
-  articles.forEach((article, index) => {
-    createPage({
-      path: `/articles/${article.node.slug}`,
-      component: require.resolve("./src/templates/article.js"),
-      context: {
-        slug: article.node.slug,
-      },
+  if (articles) {
+    const sortedArticles = articles.sort(
+      (a, b) => b.publised_on - a.publised_on
+    )
+    sortedArticles.forEach((article, index) => {
+      const prevArticle = sortedArticles[index - 1]
+        ? sortedArticles[index - 1].node
+        : false
+      const nextArticle = sortedArticles[index + 1]
+        ? sortedArticles[index + 1].node
+        : false
+
+      createPage({
+        path: `/articles/${article.node.slug}`,
+        component: require.resolve("./src/templates/article.js"),
+        context: {
+          slug: article.node.slug,
+          prevArticle,
+          nextArticle,
+        },
+      })
     })
-  })
+  }
 
   // Create teaching pages
   const teachings = result.data.teachings.edges

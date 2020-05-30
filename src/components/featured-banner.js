@@ -31,7 +31,7 @@ const FeaturedBanner = ({ teaching }) => {
             </Link>
           </span>
         </div>
-        <Share />
+        {/* <Share /> */}
       </div>
     </div>
   )

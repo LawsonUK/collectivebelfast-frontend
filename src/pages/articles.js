@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allStrapiArticle {
+    allStrapiArticle(limit: 4, sort: { order: DESC, fields: published_on }) {
       nodes {
         content
         title

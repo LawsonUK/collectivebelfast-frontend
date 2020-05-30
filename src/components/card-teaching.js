@@ -34,7 +34,7 @@ const CardTeaching = ({ teaching }) => {
             </Link>
           </span>
         </div>
-        <Share />
+        {/* <Share /> */}
       </div>
     </div>
   )

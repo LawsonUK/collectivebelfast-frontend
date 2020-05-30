@@ -64,7 +64,7 @@ const text = (
 
 export const query = graphql`
   {
-    allStrapiArticle(sort: { order: DESC, fields: published_on }) {
+    allStrapiArticle(limit: 4, sort: { order: DESC, fields: published_on }) {
       nodes {
         content
         title
@@ -105,7 +105,7 @@ export const query = graphql`
         BannerText
       }
     }
-    allStrapiTeaching {
+    allStrapiTeaching(limit: 1, sort: { fields: publishedon, order: DESC }) {
       nodes {
         slug
         title
