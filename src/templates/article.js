@@ -1,11 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import ReactMarkdown from "react-markdown"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
-import Card from "../components/card"
 import FeaturedArticle from "../components/featured-article"
 
 import "./article.scss"
@@ -49,8 +48,7 @@ export const query = graphql`
   }
 `
 
-const Article = ({ data }) => {
-  console.log("data", data)
+const Article = ({ data, pageContext }) => {
   const content = data.strapiArticle
   return (
     <Layout>
@@ -75,10 +73,18 @@ const Article = ({ data }) => {
       </div>
       <div className="prevNext">
         <div>
-          <Card article={content} />
+          {pageContext.prevArticle && (
+            <Link to={`/articles/${pageContext.prevArticle.slug}`}>
+              {pageContext.prevArticle.title}
+            </Link>
+          )}
         </div>
         <div>
-          <Card article={content} />
+          {pageContext.nextArticle && (
+            <Link to={`/articles/${pageContext.nextArticle.slug}`}>
+              {pageContext.nextArticle.title}
+            </Link>
+          )}
         </div>
       </div>
     </Layout>

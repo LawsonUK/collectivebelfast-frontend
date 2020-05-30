@@ -10,10 +10,14 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
-        articles: allStrapiArticle {
+        articles: allStrapiArticle(
+          sort: { fields: published_on, order: DESC }
+        ) {
           edges {
             node {
               slug
+              title
+              id
             }
           }
         }
@@ -41,16 +45,9 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create articles pages.
   const articles = result.data.articles.edges
   if (articles) {
-    const sortedArticles = articles.sort(
-      (a, b) => b.publised_on - a.publised_on
-    )
-    sortedArticles.forEach((article, index) => {
-      const prevArticle = sortedArticles[index - 1]
-        ? sortedArticles[index - 1].node
-        : false
-      const nextArticle = sortedArticles[index + 1]
-        ? sortedArticles[index + 1].node
-        : false
+    articles.forEach((article, index) => {
+      const prevArticle = articles[index - 1] ? articles[index - 1].node : false
+      const nextArticle = articles[index + 1] ? articles[index + 1].node : false
 
       createPage({
         path: `/articles/${article.node.slug}`,

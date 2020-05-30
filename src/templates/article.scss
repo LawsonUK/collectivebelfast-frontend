@@ -13,27 +13,3 @@
     margin-top: 50px;
   }
 }
-
-.prevNext {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  a,
-  a:visited {
-    text-decoration: none;
-  }
-
-  a.active,
-  a.focus {
-    text-decoration: underline;
-  }
-
-  > div:first-child {
-    margin-right: 10px;
-  }
-
-  > div:first-child + div {
-    margin-left: 10px;
-  }
-}

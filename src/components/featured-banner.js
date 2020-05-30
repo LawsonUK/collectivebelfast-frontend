@@ -5,7 +5,7 @@ import BackgroundImage from "gatsby-background-image"
 import Moment from "react-moment"
 
 import "./featured-banner.scss"
-import Share from "./share"
+// import Share from "./share"
 
 const FeaturedBanner = ({ teaching }) => {
   return (

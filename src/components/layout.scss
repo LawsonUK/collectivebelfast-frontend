@@ -25,6 +25,43 @@ body {
   }
 }
 
+.prevNext {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media only screen and (max-width: 1330px) {
+    padding: 1.85rem 2rem;
+  }
+
+  a {
+    color: #00c78f;
+    font-weight: bold;
+  }
+
+  a,
+  a:visited {
+    text-decoration: none;
+  }
+
+  a.active,
+  a.focus {
+    text-decoration: underline;
+  }
+
+  > div:first-child {
+    margin-right: 10px;
+    width: 50%;
+    text-align: left;
+  }
+
+  > div:first-child + div {
+    margin-left: 10px;
+    width: 50%;
+    text-align: right;
+  }
+}
+
 .content {
   max-width: 900px;
   margin: 0 auto;
