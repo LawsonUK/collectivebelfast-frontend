@@ -80,6 +80,9 @@ const Article = ({ data, pageContext }) => {
           )}
         </div>
         <div>
+          <Link to="/articles/">Back to Articles</Link>
+        </div>
+        <div>
           {pageContext.nextArticle && (
             <Link to={`/articles/${pageContext.nextArticle.slug}`}>
               {pageContext.nextArticle.title}

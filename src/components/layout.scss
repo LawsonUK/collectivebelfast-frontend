@@ -29,9 +29,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 40px;
 
   @media only screen and (max-width: 1330px) {
     padding: 1.85rem 2rem;
+  }
+
+  @media only screen and (max-width: 730px) {
+    display: block;
   }
 
   a {
@@ -44,21 +49,49 @@ body {
     text-decoration: none;
   }
 
-  a.active,
-  a.focus {
+  a:active,
+  a:focus {
     text-decoration: underline;
   }
 
-  > div:first-child {
-    margin-right: 10px;
+  > div {
     width: 50%;
-    text-align: left;
+
+    @media only screen and (max-width: 730px) {
+      margin-bottom: 40px;
+    }
   }
 
-  > div:first-child + div {
-    margin-left: 10px;
-    width: 50%;
+  > div:first-child {
+    text-align: left;
+
+    @media only screen and (max-width: 730px) {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  > div:nth-child(2) {
+    margin: 0 10px;
+    text-align: center;
+
+    @media only screen and (max-width: 730px) {
+      display: block;
+      width: 100%;
+      margin: 0 0 40px 0;
+    }
+  }
+
+  > div:nth-child(3) {
     text-align: right;
+
+    @media only screen and (max-width: 730px) {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0;
+    }
   }
 }
 
